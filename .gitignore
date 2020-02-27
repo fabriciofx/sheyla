@@ -1,11 +1,12 @@
 # Ignore all
 *
 
-# Unignore all files with extensions recursively
-!**/*.*
+# Unignore all C and C++ files recursively
+!**/*.hpp
+!**/*.cpp
 
 # Unignore Makefiles recursively
 !**/Makefile
 
-# Other .gitignore rules...
-*.o
+# Unignore all dirs
+!*/
