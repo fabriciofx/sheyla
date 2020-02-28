@@ -6,86 +6,86 @@
 
 using namespace std;
 
-int vogais(string palavra);
-int consoantes(string palavra);
-int digitos(string palavra);
-int espacos(string palavra);
-int caracteres(string palavra);
+int vogais(string frase);
+int consoantes(string frase);
+int digitos(string frase);
+int espacos(string frase);
+int caracteres(string frase);
 
 int main()
 {
-  string palavra;
+  string frase;
 
-  cout << "Digite a palavra: ";
-  getline(cin,palavra);
+  cout << "Digite a frase: ";
+  getline(cin,frase);
 
-  cout << "Vogais: " << vogais(palavra) << endl;
-  cout << "Consoantes: " << consoantes(palavra) << endl;
-  cout << "Dígitos: " << digitos(palavra) << endl;
-  cout << "Espaços: " << espacos(palavra) << endl;
-  cout << "Caracteres: "<< caracteres(palavra) << endl;
+  cout << "Vogais: " << vogais(frase) << endl;
+  cout << "Consoantes: " << consoantes(frase) << endl;
+  cout << "Dígitos: " << digitos(frase) << endl;
+  cout << "Espaços: " << espacos(frase) << endl;
+  cout << "Caracteres: "<< caracteres(frase) << endl;
 
   return 0;
 }
 
-bool eh_vogal(char c)
+bool eh_vogal(char chr)
 {
-  return c == 'a' || c == 'A' ||
-    c == 'e' || c == 'E' ||
-    c == 'i' || c == 'I' ||
-    c == 'o' || c == 'O' ||
-    c == 'u' || c == 'U';
+  return chr == 'a' || chr == 'A' ||
+    chr == 'e' || chr == 'E' ||
+    chr == 'i' || chr == 'I' ||
+    chr == 'o' || chr == 'O' ||
+    chr == 'u' || chr == 'U';
 }
 
-int vogais(string palavra)
+int vogais(string frase)
 {
   int vogais = 0;
-  for (char letra : palavra) {
-    if (eh_vogal(letra)) {
+  for (char chr : frase) {
+    if (eh_vogal(chr)) {
       vogais++;
     }
   }
   return vogais;
 }
 
-int consoantes(string palavra)
+int consoantes(string frase)
 {
   int consoantes = 0;
-  for (char letra : palavra) {
-    if (isalpha(letra) && !eh_vogal(letra)) {
+  for (char chr : frase) {
+    if (isalpha(chr) && !eh_vogal(chr)) {
       consoantes++;
     }
   }
   return consoantes;
 }
 
-int digitos(string palavra)
+int digitos(string frase)
 {
   int digitos = 0;
-  for (char letra : palavra) {
-    if (isdigit(letra)) {
+  for (char chr : frase) {
+    if (isdigit(chr)) {
       digitos++;
     }
   }
   return digitos;
 }
 
-int espacos(string palavra)
+int espacos(string frase)
 {
   int espacos = 0;
-  for (char letra : palavra) {
-    if (isspace(letra)) {
+  for (char chr : frase) {
+    if (isspace(chr)) {
       espacos++;
     }
   }
   return espacos;
 }
 
-int caracteres(string palavra)
+int caracteres(string frase)
 {
   int caracteres = 0;
-  for (char letra : palavra) {
-    if (ispunct(letra)) {
+  for (char chr : frase) {
+    if (ispunct(chr)) {
       caracteres++;
     }
   }
